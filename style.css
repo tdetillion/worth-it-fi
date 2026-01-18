@@ -217,6 +217,27 @@ section {
     margin-top: 0.5rem;
 }
 
+/* Callout Sections */
+.callout-section {
+    background-color: #e8f4fc !important;
+    border-left: 4px solid #3498db;
+}
+
+.callout-section a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.callout-section a:hover {
+    text-decoration: underline;
+}
+
+.callout-section i.fa-circle-info {
+    color: #3498db;
+    margin-right: 0.3rem;
+}
+
 h3 {
     font-size: 1.6rem;
     margin-bottom: 1rem;
