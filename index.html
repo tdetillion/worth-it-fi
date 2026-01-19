@@ -47,6 +47,86 @@
             <p>No affiliate links. No clickbait. No anxiety about being "behind." Just the 20% of financial knowledge that delivers 80% of the wealth-building results.</p>
         </section>
 
+        <section class="flowchart-section">
+            <h3>Where Should You Start?</h3>
+            <p class="flowchart-question">If you lost your job tomorrow, how long could you survive?</p>
+
+            <div class="flowchart-options">
+                <button class="flowchart-btn" data-path="1">
+                    <span class="btn-label">Less than 1 month</span>
+                    <div class="btn-content">
+                        <p>Start here: Track your spending for 1 week to see where your money goes, then check out our Priority Order guide.</p>
+                        <a href="fundamentals/priority-order.html" class="flowchart-link">Read the Priority Order guide →</a>
+                    </div>
+                </button>
+
+                <button class="flowchart-btn" data-path="2">
+                    <span class="btn-label">1-3 months</span>
+                    <div class="btn-content">
+                        <p>You're building a foundation. Focus on: Getting full employer match → Finishing your emergency fund → Opening a Roth IRA</p>
+                        <a href="fundamentals/priority-order.html" class="flowchart-link">See the full Priority Order →</a>
+                    </div>
+                </button>
+
+                <button class="flowchart-btn" data-path="3">
+                    <span class="btn-label">3-6 months</span>
+                    <div class="btn-content">
+                        <p>Solid safety net. Time to optimize: Max your Roth IRA → Eliminate high-interest debt → Increase 401(k) contributions</p>
+                        <a href="fundamentals/priority-order.html" class="flowchart-link">See the full Priority Order →</a>
+                    </div>
+                </button>
+
+                <button class="flowchart-btn" data-path="4">
+                    <span class="btn-label">6+ months</span>
+                    <div class="btn-content">
+                        <p>Wealth-building mode. Focus on: Maxing all tax-advantaged accounts → Consider taxable investing → Advanced strategies</p>
+                        <a href="fundamentals/priority-order.html" class="flowchart-link">See the full Priority Order →</a>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <section class="reality-section">
+            <h3>The Reality</h3>
+            <div class="reality-table-wrapper">
+                <table class="reality-table">
+                    <thead>
+                        <tr>
+                            <th>What We're Dealing With</th>
+                            <th>The Numbers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Americans with less than $1,000 saved</td>
+                            <td>28% (more than 1 in 4)</td>
+                        </tr>
+                        <tr>
+                            <td>Can't cover 3 months expenses</td>
+                            <td>30%</td>
+                        </tr>
+                        <tr>
+                            <td>Can afford a $1,000 emergency from savings</td>
+                            <td>Only 44%</td>
+                        </tr>
+                        <tr>
+                            <td>Credit cardholders carrying month-to-month debt</td>
+                            <td>47%</td>
+                        </tr>
+                        <tr>
+                            <td>Average credit card balance (for those with debt)</td>
+                            <td>$6,730</td>
+                        </tr>
+                        <tr>
+                            <td>Total US credit card debt</td>
+                            <td>$1.23 trillion</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="reality-takeaway">The good news: You don't need to be perfect. You just need the fundamentals.</p>
+        </section>
+
         <section class="cta-section">
             <a href="fundamentals/priority-order.html" class="cta-button">Start Here: Priority Order →</a>
         </section>
@@ -67,5 +147,23 @@
             <p>&copy; 2024 Worth It FI</p>
         </div>
     </footer>
+
+    <script>
+        document.querySelectorAll('.flowchart-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (e.target.classList.contains('flowchart-link')) return;
+
+                const wasActive = this.classList.contains('active');
+
+                document.querySelectorAll('.flowchart-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+
+                if (!wasActive) {
+                    this.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
