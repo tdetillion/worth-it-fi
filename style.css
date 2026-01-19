@@ -601,26 +601,24 @@ h3 {
     border: 1px solid #f5cba7;
 }
 
-.stat-box i {
-    font-size: 1.75rem;
-    margin-bottom: 0.75rem;
-    display: block;
-}
-
-.stat-box-blue i { color: #3498db; }
-.stat-box-green i { color: #27ae60; }
-.stat-box-purple i { color: #9b59b6; }
-.stat-box-orange i { color: #e67e22; }
-
-.stat-box .stat-value {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #2c3e50;
-    line-height: 1.3;
+.stat-box .stat-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     margin-bottom: 0.5rem;
 }
 
-.stat-box .stat-label {
+.stat-box .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+}
+
+.stat-box .stat-subtitle {
     font-size: 0.85rem;
     color: #666;
     line-height: 1.4;
