@@ -395,6 +395,221 @@ main {
     margin-top: 1rem;
 }
 
+/* FI Calculator */
+.fi-calculator {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.fi-calculator h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.calc-subheading {
+    text-align: center;
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.calc-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.calc-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.input-group input {
+    padding: 0.7rem 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.input-with-prefix,
+.input-with-suffix {
+    display: flex;
+    align-items: stretch;
+}
+
+.input-with-prefix input {
+    border-radius: 0 6px 6px 0;
+    flex: 1;
+}
+
+.input-with-suffix input {
+    border-radius: 6px 0 0 6px;
+    flex: 1;
+}
+
+.input-prefix,
+.input-suffix {
+    padding: 0.7rem 0.75rem;
+    background-color: #e9ecef;
+    border: 1px solid #ddd;
+    color: #666;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+
+.input-prefix {
+    border-radius: 6px 0 0 6px;
+    border-right: none;
+}
+
+.input-suffix {
+    border-radius: 0 6px 6px 0;
+    border-left: none;
+}
+
+.input-help {
+    font-size: 0.8rem;
+    color: #888;
+    font-style: italic;
+}
+
+.calculate-btn {
+    margin-top: 0.5rem;
+    padding: 0.9rem 1.5rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    font-family: inherit;
+}
+
+.calculate-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.calc-results {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.results-placeholder {
+    text-align: center;
+    color: #888;
+}
+
+.results-placeholder p {
+    margin: 0;
+}
+
+.results-content {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-main {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+.result-main strong {
+    font-size: 1.8rem;
+    color: #27ae60;
+}
+
+.result-years {
+    font-size: 1.05rem;
+    color: #666;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.result-detail {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.result-detail:last-child {
+    margin-bottom: 0;
+}
+
+.result-income {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+    font-size: 1rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.calc-chart-container {
+    margin-top: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+}
+
+.calc-note {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: #777;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.calc-note a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.calc-note a:hover {
+    text-decoration: underline;
+}
+
 .intro {
     margin-bottom: 3rem;
     font-size: 1.1rem;
@@ -1088,6 +1303,27 @@ footer p {
     .reality-table th,
     .reality-table td {
         padding: 0.7rem 0.6rem;
+    }
+
+    .fi-calculator {
+        padding: 1.5rem 1rem;
+    }
+
+    .fi-calculator h3 {
+        font-size: 1.3rem;
+    }
+
+    .calc-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .calc-results {
+        min-height: auto;
+    }
+
+    .result-main strong {
+        font-size: 1.5rem;
     }
 
     .site-title {
