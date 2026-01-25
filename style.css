@@ -229,97 +229,6 @@ main {
     text-decoration: underline;
 }
 
-/* Flowchart Section */
-.flowchart-section {
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-}
-
-.flowchart-section h3 {
-    font-size: 1.4rem;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
-
-.flowchart-question {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.flowchart-options {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-}
-
-.flowchart-btn {
-    background-color: #fff;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 0;
-    cursor: pointer;
-    text-align: left;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    font-family: inherit;
-    overflow: hidden;
-}
-
-.flowchart-btn:hover {
-    border-color: #3498db;
-    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.15);
-}
-
-.flowchart-btn.active {
-    border-color: #3498db;
-    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
-}
-
-.btn-label {
-    display: block;
-    padding: 1rem 1.25rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #2c3e50;
-}
-
-.btn-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    background-color: #f0f7fc;
-    border-top: 1px solid #e0e0e0;
-}
-
-.flowchart-btn.active .btn-content {
-    max-height: 200px;
-    padding: 1rem 1.25rem;
-}
-
-.btn-content p {
-    font-size: 0.95rem;
-    color: #444;
-    line-height: 1.5;
-    margin-bottom: 0.75rem;
-}
-
-.flowchart-link {
-    display: inline-block;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #3498db;
-    text-decoration: none;
-}
-
-.flowchart-link:hover {
-    text-decoration: underline;
-}
-
 /* Reality Section */
 .reality-section {
     margin-bottom: 3rem;
@@ -415,6 +324,17 @@ main {
     color: #666;
     margin-bottom: 1.5rem;
     font-size: 1rem;
+}
+
+.calc-explainer {
+    text-align: center;
+    color: #555;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .calc-container {
@@ -1273,27 +1193,6 @@ footer p {
     .quick-links ul {
         flex-direction: column;
         gap: 0.75rem;
-    }
-
-    .flowchart-section {
-        padding: 1.5rem 1rem;
-    }
-
-    .flowchart-question {
-        font-size: 1.1rem;
-    }
-
-    .flowchart-options {
-        grid-template-columns: 1fr;
-    }
-
-    .btn-label {
-        font-size: 1rem;
-        padding: 0.9rem 1rem;
-    }
-
-    .flowchart-btn.active .btn-content {
-        padding: 0.9rem 1rem;
     }
 
     .reality-table {
