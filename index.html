@@ -272,7 +272,13 @@
             const finalNominal = Math.round(nominalBalance);
             const finalReal = Math.round(nominalBalance / Math.pow(1 + inflationRate, yearsToFI));
             const finalTarget = Math.round(fiTargetToday * Math.pow(1 + inflationRate, yearsToFI));
-            const annualIncome = Math.round(fiTargetToday * 0.04); // 4% of original target = today's dollars income
+
+            // Calculate inflation-adjusted expenses at FI
+            const inflationMultiplier = Math.pow(1 + inflationRate, yearsToFI);
+            const monthlyExpensesAtFI = Math.round(monthlyExpenses * inflationMultiplier);
+            const annualExpensesToday = monthlyExpenses * 12;
+            const annualExpensesAtFI = Math.round(annualExpensesToday * inflationMultiplier);
+            const annualIncomeAtFI = Math.round(finalNominal * 0.04); // 4% of nominal portfolio
 
             const resultsDiv = document.getElementById('calc-results');
 
@@ -291,12 +297,23 @@
 
             resultsDiv.innerHTML = `
                 <div class="results-content">
-                    <p class="result-success" style="background: linear-gradient(135deg, #e8f8f0, #d5f5e3); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-size: 1.1rem; color: #1e8449;">
+                    <p class="result-success" style="background: linear-gradient(135deg, #e8f8f0, #d5f5e3); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-size: 1.15rem; color: #1e8449;">
                         <i class="fa-solid fa-circle-check" style="margin-right: 0.5rem;"></i>
-                        You could reach FI in <strong>${yearsToFI} years</strong> at age <strong>${fiAge}</strong> with a portfolio of <strong>$${finalNominal.toLocaleString()}</strong>!
+                        You could reach FI in <strong>${yearsToFI} years</strong> at age <strong>${fiAge}</strong>!
                     </p>
-                    <p class="result-detail">That's $${finalReal.toLocaleString()} in today's purchasing power.</p>
-                    <p class="result-income">Annual passive income: ~$${annualIncome.toLocaleString()}/year (in today's dollars)</p>
+
+                    <h4 style="color: #2c3e50; margin: 1.25rem 0 0.75rem 0; font-size: 1rem;">Your Financial Picture at FI:</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 1rem 0; font-size: 0.95rem; line-height: 1.8;">
+                        <li style="padding: 0.25rem 0;"><strong>Monthly expenses then:</strong> $${monthlyExpensesAtFI.toLocaleString()} <span style="color: #666;">($${monthlyExpenses.toLocaleString()} in today's dollars)</span></li>
+                        <li style="padding: 0.25rem 0;"><strong>Annual expenses then:</strong> $${annualExpensesAtFI.toLocaleString()} <span style="color: #666;">($${annualExpensesToday.toLocaleString()} in today's dollars)</span></li>
+                        <li style="padding: 0.25rem 0;"><strong>Portfolio value needed:</strong> $${finalNominal.toLocaleString()} <span style="color: #666;">($${finalReal.toLocaleString()} in today's purchasing power)</span></li>
+                        <li style="padding: 0.25rem 0;"><strong>Annual passive income:</strong> ~$${annualIncomeAtFI.toLocaleString()}/year <span style="color: #666;">at 4% withdrawal rate</span></li>
+                    </ul>
+
+                    <p class="result-note" style="font-size: 0.85rem; color: #666; background: #f8f9fa; padding: 0.75rem; border-radius: 6px; margin: 0;">
+                        <i class="fa-solid fa-circle-info" style="color: #3498db; margin-right: 0.4rem;"></i>
+                        Due to inflation, both your expenses and portfolio will be larger in future dollars, but your purchasing power remains the same.
+                    </p>
                 </div>
             `;
 
